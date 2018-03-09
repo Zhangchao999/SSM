@@ -22,6 +22,11 @@ ${pageContext.request.contextPath}
 
 ```
 
+### Ajax的执行顺序
+1、 创建xmlHttpRequest对象；
+2、 使用xmlHttpRequest对象的open（）和send（）方法发送资源请求给服务器；
+3、 使用xmlHttpRequest对象的responseText或responseXML属性获得服务器的响应；
+4、 执行onreadystatechange函数；
 
 ### ajax动态实现下拉框（从数据库获取）
 
