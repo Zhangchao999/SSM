@@ -10,6 +10,19 @@
 ${pageContext.request.contextPath}
 ```
 
+### Maven 添加JSON 显示错误
+```xml
+<dependency>
+    <groupId>net.sf.json-lib</groupId>
+    <artifactId>json-lib</artifactId>
+    <version>2.4</version>
+    <!-- 必须添加下面的jdk15 -->
+    <classifier>jdk15</classifier>
+</dependency>
+
+```
+
+
 ### ajax动态实现下拉框（从数据库获取）
 
 例如：
@@ -101,3 +114,30 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
  		}			
  	}
  }
+```
+
+
+### 在SSM的controller中获表单中文乱码
+
+``` java
+
+@RequestMapping(value="/add",method=RequestMethod.POST)
+	
+	// 从表单获得的数据为teacherNo，teacherName，sex ，inputMan ，phone ，department
+
+	public void addTeacher(HttpServletRequest request,String teacherNo, String teacherName,String sex,String inputMan,String phone,String department,Model model) throws Exception {
+
+		// 乱码的原因是 获得的字符的编码为 iso-8859-1
+		teacherNo = new String(teacherNo.getBytes("iso-8859-1"),"utf-8");
+		teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
+		sex = new String(sex.getBytes("iso-8859-1"),"utf-8");
+		inputMan = new String(inputMan.getBytes("iso-8859-1"),"utf-8");
+		phone = new String(phone.getBytes("iso-8859-1"),"utf-8");
+		department = new String(department.getBytes("iso-8859-1"),"utf-8");
+		
+		// 测试获得的数据
+		System.out.println(teacherNo+" "+teacherName+" "+sex+" "+inputMan+" "+phone+" "+department);
+		
+	}
+```
+
