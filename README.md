@@ -112,7 +112,9 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 	 		 	dd.options.add(new Option(name,id));
 	 		}
  		}else if(clickNum%2==1){
+ 			// 把下拉框设置为空
  			dd.options.length = 0;
+ 			// 添加下拉框
  			for(var i=0;i<dep.length;i++){
  				var id = dep[i].id;
  				var name = dep[i].departmentName;
