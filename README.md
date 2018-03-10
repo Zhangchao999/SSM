@@ -101,8 +101,8 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
  		alert(name);*/
  		
  		// if-else 是为了 在点击下拉框时避免重复
- 		// clickNum 为 1 时，把下拉框设置为空，在添加options
- 		// clickNum 为 2 时，是为了点击要选择的 学院 
+ 		// clickNum 为 奇数 时，把下拉框设置为空，在添加options
+ 		// clickNum 为 偶数 时，是为了点击要选择的 学院 
  		if(clickNum%2==0){
  			for(var i=0;i<dep.length;i++){
  				// 获得 dep 的id 和 departmentName
