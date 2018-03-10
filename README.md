@@ -49,7 +49,7 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 		// allDepartment 方法获得所有的学院 返回List类
 		List<Department> departments = departmentService.allDepartment();
 		
-		// 把数据以JSON的形式发送
+		// 把List 转换成JSON的形式
 		JSONArray json =  JSONArray.fromObject(departments);
 		// 设置编码格式
 		response.setContentType("text/html;charset=UTF-8");
