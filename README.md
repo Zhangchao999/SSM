@@ -56,7 +56,7 @@ spring-service.xml
 > 主要是自动扫描注解及注册相应的类，
 
 spring-web.xml
-> 主要是MVC的注解，以及视图的显示包括前置（.jsp 的文件在那个文件夹下面）和后置（以社么结尾的 .jsp）
+> 主要是MVC的注解，以及视图的显示包括前置（.jsp 的文件在那个文件夹下面）和后置（以什么结尾的 .jsp）
 
 <br>
 8、jdbc.properties 是数据库的配置文件包括 driver, url, username, password.<br><br>
