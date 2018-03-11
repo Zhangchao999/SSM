@@ -13,7 +13,10 @@ main/java 为以后开发中写Java的目录<br>
 main/resources 写除了 `.java` 文件外的其他文件<br>
 test/java 写测试类<br>
 <br><br>
+下面开始正式搭建框架<br>
+先看看完整的目录<br>
 
+![完整的目录](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM02.png)
 
 
 
