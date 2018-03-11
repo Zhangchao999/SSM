@@ -22,13 +22,13 @@ test/java 写测试类<br>
 <br>
 解释：<br>
 1、dao包: 用于操作数据库的，例如：
-```java
+``` java
 //  该方法用于查找id对应的User
 User queryById(int id);
 
 ```
-
-```java
+<br>
+``` java
 // 当方法的参数是两个或两个以上时，要加@Param
 	int insertUser(@Param("userName") String userName,@Param("password") String password);
 ```
