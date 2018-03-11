@@ -22,6 +22,7 @@ test/java 写测试类<br>
 <br>
 解释：
 `dao包` 用于操作数据库的，例如：User queryById(int id); 查找id 对应的User,<span style="color: red">在dao包中写的是interface,具体的实现用到了Mybstis，即后面的mapping目录下的.xml文件</span> <br>
+<span style="color: red"> Some red text </span>
 
 
 
