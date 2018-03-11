@@ -132,7 +132,12 @@ jdbc.password=
 
 ```
 
-spring-service.xml
+3、spring-service.xml
+	配置了：<br>
+	扫描service包下的注解@service<br>
+	配置事务管理器<br>
+	配置基于注解的声明事务
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -161,7 +166,12 @@ spring-service.xml
 </beans>
 ```
 
-spring-web.xml
+4、spring-web.xml
+	配置了：<br>
+	开启springMVC注解<br>
+	静态资源默认servlet配置<br>
+	配置jsp 显示viewResolver<br>
+	扫描web相关的bean @Controller
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -192,7 +202,7 @@ spring-web.xml
 </beans>
 ```
 
-logback.xml
+5、logback.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
@@ -209,7 +219,11 @@ logback.xml
 </configuration>
 ```
 
-mybatis-config.xml
+6、mybatis-config.xml
+	配置了：<br>
+	自动增加主键<br>
+	使用列别名替换列名<br>
+	开启驼峰命名转换
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
@@ -228,6 +242,33 @@ mybatis-config.xml
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 </configuration>
+```
+
+7、web.xml
+	系统的web.xml文件，把前面的`spring-dao.xml` `spring-service.xml` `spring-web.xml` 导入到web.xml,实现在服务器启动时加载配置文件。
+```xml
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1" metadata-complete="true">
+	
+	<!-- 配置DispatcherServlet -->
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>	
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/spring-*.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<!-- 默认匹配所有的请求 -->
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
+
 ```
 
 
