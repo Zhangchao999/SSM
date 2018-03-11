@@ -21,12 +21,11 @@ test/java 写测试类<br>
 
 <br>
 解释：<br>
-1、dao包: 用于操作数据库的，例如：User queryById(int id); 该方法用于查找id对应的User,当方法的参数是两个或两个以上时，要加@Param。 例如： int insertUser(@Param("userName") String userName,@Param("password") String password)。在dao包中写的是interface,具体的实现用到了Mybstis，即后面的mapping目录下的.xml文件<br>
-2、entity包: 用于编写实体类。<br>
-3、service包: 用于编写业务，例如：public User login(String userNo,String password); 该方法用于查询用户名和密码是否正确，service写的也是interface,具体的实现在service.impl中<br>
-4、service.impl包: 用于实现接口，也就是interface的具体的实现，一般会用到相应的dao。在类前面写@Service，标注业务层组件，为了自动把类注册带spring下。 在 dao 前面写@Autowired，为了装配bean。 <br>
-5、web包:  用于实现控制及跳转，在类前面写@Controller，用于定义控制器类，及MVC的DispatcherServlet的具体实现。在想要实现功能的方法前面写@RequestMapping(value="###"),### 为相应的url<br>
-
+*1、dao包: 用于操作数据库的，例如：User queryById(int id); 该方法用于查找id对应的User,当方法的参数是两个或两个以上时，要加@Param。 例如： int insertUser(@Param("userName") String userName,@Param("password") String password)。在dao包中写的是interface,具体的实现用到了Mybstis，即后面的mapping目录下的.xml文件<br>
+*2、entity包: 用于编写实体类。<br>
+*3、service包: 用于编写业务，例如：public User login(String userNo,String password); 该方法用于查询用户名和密码是否正确，service写的也是interface,具体的实现在service.impl中<br>
+*4、service.impl包: 用于实现接口，也就是interface的具体的实现，一般会用到相应的dao。在类前面写@Service，标注业务层组件，为了自动把类注册带spring下。 在 dao 前面写@Autowired，为了装配bean。 <br>
+*5、web包:  用于实现控制及跳转，在类前面写@Controller，用于定义控制器类，及MVC的DispatcherServlet的具体实现。在想要实现功能的方法前面写@RequestMapping(value="###"),### 为相应的url<br>
 
 
 
