@@ -7,8 +7,16 @@
 
 ### SSM的搭建
 
-使用maven开发：
-使用maven后会在 `Java Resources` 中生成 `main/java包` `main/resources包` `test/java包`
+使用maven开发：<br>
+使用maven后会在 `Java Resources` 中生成 `main/java包` `main/resources包` `test/java包`<br>
+main/java 为以后开发中写Java的目录<br>
+main/resources 写除了 `.java` 文件外的其他文件<br>
+test/java 写测试类<br>
+<br><br>
+
+
+
+
 
 
 
