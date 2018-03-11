@@ -5,7 +5,7 @@
 
 ![过程](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM01.jpg)
 
-*******
+*********************
 ### SSM的搭建
 
 使用maven开发：<br>
@@ -267,7 +267,7 @@ jdbc.password=
 
 ```
 
-
+*********************
 ### 绝对路径
 ```java
 ${pageContext.request.contextPath}
