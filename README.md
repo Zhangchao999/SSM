@@ -78,7 +78,10 @@ jdbc.username=root
 jdbc.password=
 ```
 
-2、spring-dao.xml
+2、spring-dao.xml<br>
+	1.
+	2.
+	3.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
