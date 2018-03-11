@@ -65,11 +65,9 @@ spring-web.xml
 
 10、mybatis-config.xml 文件为mybatis的相关配置。<br><br>
 
+11、src文件夹：全部的文件都在这，包括webapp（WEB-INF，web.xml等文件）<br><br>
 
-
-
-
-
+12、  pom.xml 是该项目全部的.jar包
 
 
 ### 绝对路径
