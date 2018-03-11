@@ -27,7 +27,8 @@ test/java 写测试类<br>
 //该方法用于查找id对应的User
 User queryById(int id);
 ```
-<br>
+
+
 ``` java
 //当方法的参数是两个或两个以上时，要加@Param
 int insertUser(@Param("userName") String userName,@Param("password") String password);
