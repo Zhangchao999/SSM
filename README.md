@@ -33,7 +33,6 @@ User queryById(int id);
 //当方法的参数是两个或两个以上时，要加@Param
 int insertUser(@Param("userName") String userName,@Param("password") String password);
 ```
-
 在dao包中写的是interface,具体的实现用到了Mybstis，即后面的mapping目录下的.xml文件<br>
 2、entity包: 用于编写实体类。<br>
 3、service包: 用于编写业务，例如：public User login(String userNo,String password); 该方法用于查询用户名和密码是否正确，service写的也是interface,具体的实现在service.impl中<br>
