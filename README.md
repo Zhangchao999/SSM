@@ -5,6 +5,19 @@
 
 ![过程](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM01.jpg)
 
+### SSM的搭建
+
+使用maven开发：
+使用maven后会在 `Java Resources` 中生成 `main/java包` `main/resources包` `test/java包`
+
+
+
+
+
+
+
+
+
 ### 绝对路径
 ``` java
 ${pageContext.request.contextPath}
