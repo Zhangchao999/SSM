@@ -58,7 +58,7 @@ spring-service.xml
 spring-web.xml
 > 主要是MVC的注解，以及视图的显示包括前置（.jsp 的文件在那个文件夹下面）和后置（以社么结尾的 .jsp）
 
-<br><br>
+<br>
 8、jdbc.properties 是数据库的配置文件包括driver,url,username.password.<br><br>
 
 9、logback.xml 是日志文件。<br><br>
