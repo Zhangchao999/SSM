@@ -69,6 +69,162 @@ spring-web.xml
 
 12、  pom.xml 是该项目全部的.jar包
 
+#### spring的配置
+1、jdbc.properties
+```properties
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/db_SSM
+jdbc.username=root
+jdbc.password=
+```
+
+2、spring-dao.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 配置数据库的相关参数properties的属性 -->	
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	
+	<!-- 数据库连接池 c3p0 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 连接属性 -->
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<!-- c3p0连结池的属性 -->
+		<property name="maxPoolSize" value="30"/>
+		<property name="minPoolSize" value="10"/>
+		<property name="autoCommitOnClose" value="false"/>
+		<property name="checkoutTimeout" value="10000"/>
+		<property name="acquireRetryAttempts" value="2"/>
+	</bean>
+	
+	<!-- 配置SqlSessionFactroy对象 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="typeAliasesPackage" value="com.zc.entity"/>
+		<property name="mapperLocations" value="classpath:mapping/*.xml"/>
+	
+	</bean>
+	
+	<!-- 配置扫描dao接口包，动态实现dao接口，注入到spring容器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+		<property name="basePackage" value="com.zc.dao"></property>
+	</bean>
+	
+		
+</beans>
+
+```
+
+spring-service.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 扫描service包下所有使用注解的类型 -->
+	<context:component-scan base-package="com.zc.service"/>
+	
+	<!-- 配置事物管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 注入数据库连接池 -->
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<!-- 配置基于注解的声明事务-->
+	<tx:annotation-driven transaction-manager="transactionManager"/>	
+	
+</beans>
+```
+
+spring-web.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/mvc
+						http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<!-- 开启springMVC注解模式 -->
+	<mvc:annotation-driven/>
+	
+	<!-- 静态资源默认servlet配置 -->
+	<mvc:default-servlet-handler/>
+	
+	<!-- 配置jsp 显示viewResolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+	</bean>
+	
+	<!-- 扫描web相关的bean -->
+	<context:component-scan base-package="com.zc.web"/>
+</beans>
+```
+
+logback.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are by default assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
+```
+
+mybatis-config.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置全局属性 -->
+	<settings>
+		<!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
+		<setting name="useGeneratedKeys" value="true" />
+
+		<!-- 使用列别名替换列名 默认:true -->
+		<setting name="useColumnLabel" value="true" />
+
+		<!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+</configuration>
+```
+
 
 ### 绝对路径
 ```java
