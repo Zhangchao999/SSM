@@ -50,16 +50,20 @@ public User login(String userNo,String password);
 
 7、spring文件夹： 是SSM的脊梁，SSM能完整的运行主要spring下的文件配置。<br>
 spring-dao.xml
-> 111
+> 是连接数据库的配置文件，前提是先写了jdbc.properties文件，在该配置文件中可以读取.properties的内容。
 
 spring-service.xml
-> 222
+> 主要是自动扫描注解及注册相应的类，
 
 spring-web.xml
-> 333
+> 主要是MVC的注解，以及视图的显示包括前置（.jsp 的文件在那个文件夹下面）和后置（以社么结尾的 .jsp）
 
 <br><br>
+8、jdbc.properties 是数据库的配置文件包括driver,url,username.password.<br><br>
 
+9、logback.xml 是日志文件。<br><br>
+
+10、mybatis-config.xml 文件为mybatis的相关配置。<br><br>
 
 
 
