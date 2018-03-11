@@ -79,9 +79,9 @@ jdbc.password=
 ```
 
 2、spring-dao.xml<br>
-	1.<br>
-	2.<br>
-	3.<br>
+	&nbsp;&nbsp;&nbsp;1.<br>
+	&nbsp;&nbsp;&nbsp;2.<br>
+	&nbsp;&nbsp;&nbsp;3.<br>
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
