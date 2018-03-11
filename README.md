@@ -244,7 +244,7 @@ jdbc.password=
 </configuration>
 ```
 
-7、web.xml
+7、web.xml<br>
 	系统的web.xml文件，把前面的`spring-dao.xml` `spring-service.xml` `spring-web.xml` 导入到web.xml,实现在服务器启动时加载配置文件。
 ```xml
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
