@@ -41,7 +41,7 @@ public User login(String userNo,String password);
 ```
 
 该方法用于查询用户名和密码是否正确，service写的也是interface,具体的实现在service.impl中<br><br>
-4、service.impl包: 用于实现接口，也就是interface的具体的实现，一般会用到相应的dao。<br>在类前面写@Service，标注业务层组件，为了自动把类注册带spring下。 <br>在 dao 前面写@Autowired，为了装配bean。 <br><br>
+4、service.impl包: 用于实现接口，也就是interface的具体的实现，一般会用到相应的dao。<br>在类前面写@Service，标注业务层组件，为了自动把类注册到spring下。 <br>在 dao 前面写@Autowired，为了装配bean。 <br><br>
 5、web包:  用于实现控制及跳转。<br>在类前面写@Controller，用于定义控制器类，及MVC的DispatcherServlet的具体实现。在想要实现功能的方法前面写@RequestMapping(value="###"),### 为相应的url地址。<br><br>
 
 
