@@ -79,7 +79,6 @@ jdbc.password=
 ```
 
 2、spring-dao.xml<br>
-	主要配置了:<br>
 	数据库的连接参数（jdbc.properties);<br>
 	数据库连接池<br>
 	SqlSessionFactory对象<br>
@@ -132,8 +131,7 @@ jdbc.password=
 
 ```
 
-3、spring-service.xml
-	配置了：<br>
+3、spring-service.xml<br>
 	扫描service包下的注解@service<br>
 	配置事务管理器<br>
 	配置基于注解的声明事务
@@ -166,8 +164,7 @@ jdbc.password=
 </beans>
 ```
 
-4、spring-web.xml
-	配置了：<br>
+4、spring-web.xml<br>
 	开启springMVC注解<br>
 	静态资源默认servlet配置<br>
 	配置jsp 显示viewResolver<br>
@@ -219,8 +216,7 @@ jdbc.password=
 </configuration>
 ```
 
-6、mybatis-config.xml
-	配置了：<br>
+6、mybatis-config.xml<br>
 	自动增加主键<br>
 	使用列别名替换列名<br>
 	开启驼峰命名转换
