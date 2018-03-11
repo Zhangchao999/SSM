@@ -20,7 +20,7 @@ test/java 写测试类<br>
 ![完整的目录](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM02.png)
 
 <br>
-解释：
+解释：<br>
 1、 `dao包` 用于操作数据库的，例如：User queryById(int id); 该方法用于查找id对应的User,当方法的参数是两个或两个以上时，要加@Param。 例如： `int insertUser(@Param("userName") String userName,@Param("password") String password);`    
 `在dao包中写的是interface,具体的实现用到了Mybstis，即后面的mapping目录下的.xml文件`<br>
 2、 `entity包` 用于编写实体类。<br>
