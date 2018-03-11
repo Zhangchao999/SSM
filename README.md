@@ -41,11 +41,22 @@ public User login(String userNo,String password);
 ```
 
 该方法用于查询用户名和密码是否正确，service写的也是interface,具体的实现在service.impl中<br><br>
+
 4、service.impl包: 用于实现接口，也就是interface的具体的实现，一般会用到相应的dao。<br>在类前面写@Service，标注业务层组件，为了自动把类注册到spring下。 <br>在 dao 前面写@Autowired，为了装配bean。 <br><br>
+
 5、web包:  用于实现控制及跳转。<br>在类前面写@Controller，用于定义控制器类，及MVC的DispatcherServlet的具体实现。在想要实现功能的方法前面写@RequestMapping(value="###"),### 为相应的url地址。<br><br>
 
+6、mapping文件夹： 是前面dao包的实现，这是Mybatis知识。<br>该文件夹下都是.xml文件，文件中主体写在<mapper namespace="###"></mapper>中，### 为dao包的完整路径。<br><br>
 
+7、spring文件夹： 是SSM的脊梁，SSM能完整的运行主要spring下的文件配置。<br>
+spring-dao.xml
+> 111
+spring-service.xml
+> 222
+spring-web.xml
+> 333
 
+<br><br>
 
 
 
