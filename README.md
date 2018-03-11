@@ -5,6 +5,7 @@
 
 ![过程](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM01.jpg)
 
+*******
 ### SSM的搭建
 
 使用maven开发：<br>
@@ -17,6 +18,9 @@ test/java 写测试类<br>
 先看看完整的目录<br>
 
 ![完整的目录](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM02.png)
+
+<br>
+解释：
 
 
 
