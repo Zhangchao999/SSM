@@ -79,9 +79,11 @@ jdbc.password=
 ```
 
 2、spring-dao.xml<br>
-	&nbsp;&nbsp;&nbsp;1.<br>
-	&nbsp;&nbsp;&nbsp;2.<br>
-	&nbsp;&nbsp;&nbsp;3.<br>
+	主要配置了:<br>
+	数据库的连接参数（jdbc.properties);<br>
+	数据库连接池<br>
+	SqlSessionFactory对象<br>
+	自动扫描dao接口
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
