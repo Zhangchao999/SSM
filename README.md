@@ -1,15 +1,15 @@
 # SSM
 记录学习ssm时遇到的问题
 
-[SSM搭建](###SSM的搭建)
+[SSM](#SSM)
 
 
-### 执行过程图
+## 执行过程图
 
 ![过程](https://github.com/Zhangchao999/SSM/raw/master/pictures/SSM01.jpg)
 
 *********************
-### SSM的搭建
+## SSM
 
 使用maven开发：<br>
 使用maven后会在 `Java Resources` 中生成 `main/java包` `main/resources包` `test/java包`<br>
@@ -72,7 +72,7 @@ spring-web.xml
 
 12、  pom.xml 是该项目全部的.jar包
 
-#### spring的配置
+### spring的配置
 1、jdbc.properties
 ```properties
 jdbc.driver=com.mysql.jdbc.Driver
@@ -271,12 +271,12 @@ jdbc.password=
 ```
 
 *********************
-### 绝对路径
+## 绝对路径
 ```java
 ${pageContext.request.contextPath}
 ```
 
-### Maven 添加JSON 显示错误
+## Maven 添加JSON 显示错误
 ```xml
 <dependency>
     <groupId>net.sf.json-lib</groupId>
@@ -288,7 +288,7 @@ ${pageContext.request.contextPath}
 
 ```
 
-### Ajax的执行顺序
+## Ajax的执行顺序
 1、 创建xmlHttpRequest对象；<br>
 2、 使用xmlHttpRequest对象的open（）和send（）方法发送资源请求给服务器；<br>
 3、 使用xmlHttpRequest对象的responseText或responseXML属性获得服务器的响应；<br>
@@ -296,7 +296,7 @@ ${pageContext.request.contextPath}
 
 
 
-### ajax动态实现下拉框（从数据库获取）
+## ajax动态实现下拉框（从数据库获取）
 
 例如：
 ``` jsp
@@ -392,7 +392,7 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 ```
 
 
-### 在SSM的controller中获表单中文乱码
+## 在SSM的controller中获表单中文乱码
 
 ``` java
 
