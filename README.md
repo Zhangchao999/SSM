@@ -1,8 +1,7 @@
 # SSM
 记录学习ssm时遇到的问题
 
-[SSM](#ssmtest)
-[link1](#link1)
+[SSM](#ssm搭建)
 
 
 ## 执行过程图
@@ -13,7 +12,7 @@
 ## link1
 
 testTOC
-## SSMtest
+## SSM搭建
 
 使用maven开发：<br>
 使用maven后会在 `Java Resources` 中生成 `main/java包` `main/resources包` `test/java包`<br>
