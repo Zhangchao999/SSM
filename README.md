@@ -1,8 +1,8 @@
 # SSM
 记录学习ssm时遇到的问题
 
-# TOC
 ---------
+# TOC
 [执行过程图](#执行过程图)<br>
 [SSM搭建](#ssm搭建)<br>
 [spring的配置](#spring的配置)<br>
