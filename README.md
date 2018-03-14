@@ -1,14 +1,14 @@
 # SSM
 记录学习ssm时遇到的问题
 
-[执行过程图](#执行过程图)<br>
-[SSM搭建](#ssm搭建)<br>
-	[spring的配置](#spring的配置)<br>
-[绝对路径](#绝对路径)<br>
-[Maven 添加JSON 显示错误](#maven-添加json-显示错误)<br>
-[Ajax的执行顺序](#ajax的执行顺序)<br>
-[ajax动态实现下拉框从-数据库获取](#ajax动态实现下拉框-从数据库获取)<br>
-[在SSM的controller中获表单中文乱码](#在ssm的controller中获表单中文乱码)<br>
+>[执行过程图](#执行过程图)<br>
+>[SSM搭建](#ssm搭建)<br>
+>>[spring的配置](#spring的配置)<br>
+>[绝对路径](#绝对路径)<br>
+>[Maven 添加JSON 显示错误](#maven-添加json-显示错误)<br>
+>[Ajax的执行顺序](#ajax的执行顺序)<br>
+>[ajax动态实现下拉框从-数据库获取](#ajax动态实现下拉框-从数据库获取)<br>
+>[在SSM的controller中获表单中文乱码](#在ssm的controller中获表单中文乱码)<br>
 
 
 
