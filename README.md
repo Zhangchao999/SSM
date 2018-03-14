@@ -3,7 +3,7 @@
 
 [执行过程图](#执行过程图)<br>
 [SSM](#ssm搭建)<br>
-[pring的配置](##pring的配置)<br>
+[spring的配置](##spring的配置)<br>
 
 
 
