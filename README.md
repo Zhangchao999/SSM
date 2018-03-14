@@ -1,7 +1,7 @@
 # SSM
 记录学习ssm时遇到的问题
 
-[SSM](##ssmtest)
+[SSM](#ssmtest)
 [link1](#link1)
 
 
