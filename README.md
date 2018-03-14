@@ -1,9 +1,7 @@
 # SSM
 记录学习ssm时遇到的问题
 
-[执行过程图](##执行过程图)<br>
-[SSM的搭建](##SSM的搭建)<br>
-[What is LaTeX?](#what-is-latex)
+
 
 ### 执行过程图
 
@@ -417,4 +415,3 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 	}
 ```
 
-#What is LaTeX?
