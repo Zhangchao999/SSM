@@ -2,7 +2,7 @@
 记录学习ssm时遇到的问题
 
 [执行过程图](#执行过程图)<br>
-[SSM](#SSM搭建)<br>
+[SSM](#ssm搭建)<br>
 [spring的配置](#spring的配置)<br>
 [绝对路径](#绝对路径)<br>
 [Maven 添加JSON 显示错误](#maven-添加json-显示错误)<br>
