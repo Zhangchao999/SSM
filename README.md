@@ -3,7 +3,7 @@
 
 [执行过程图](#执行过程图)<br>
 [SSM搭建](#ssm搭建)<br>
-&nbsp;&nbsp;[spring的配置](#spring的配置)<br>
+[spring的配置](#spring的配置)<br>
 [绝对路径](#绝对路径)<br>
 [Maven 添加JSON 显示错误](#maven-添加json-显示错误)<br>
 [Ajax的执行顺序](#ajax的执行顺序)<br>
