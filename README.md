@@ -1,7 +1,7 @@
 # SSM
 记录学习ssm时遇到的问题
 
-[link1](#link1)
+[SSM](#SSM)
 
 
 ## 执行过程图
