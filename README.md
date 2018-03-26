@@ -11,6 +11,8 @@
 [Ajax的执行顺序](#ajax的执行顺序)<br>
 [ajax动态实现下拉框从-数据库获取](#ajax动态实现下拉框-从数据库获取)<br>
 [在SSM的controller中获表单中文乱码](#在ssm的controller中获表单中文乱码)<br>
+[SpringMVC注解](#springMVC注解)<br>
+
 
 ----------
 
@@ -427,8 +429,72 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 ```
 
 
-## springMVC注解
+## SpringMVC注解
 
-1. @Controller
-hdasjchasjc
+1. @Controller <br>
+
+> 在SpringMVC中，控制器Controller负责处理DispatcherServlet分发的请求，他把用户请求的数据经过处理层处理后分装成一个Model，然后把该Model返回给View进行展示。
+
+>  你无需继承特定的类或者特定的接口，只要用@Controller标记一个类是Controller，然后用@RequestMapping和@RequestOaram等注解定义URL请求和Controller之间的映射，这样Controller就能被外界访问了。
+
+> @Controller只是标记一个类。分发处理器会扫描使用该注解的类的方法上，并检测是否使用了@RequestMapping注解。@Controller 只是定义了控制器，真正处理请求的处理器是 @RequestMapping注解。
+
+> < context:component-scan base-package = "com.zc.web" />包名为要扫描的包
+
+2. @RequestMapping <br>
+
+> RequestMapping用来处理请求地址映射的注解，可用在类或方法上，在类上表示父路径。
+
+> value,method : value指定请求的实际地址。method指定请求的method类型。
+
+> consumes,produces : consumes指定请求提交内容类型(Content-Type),例如 application/json, text/html。priduces指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回。
+
+3. @Resource和@Autowired <br>
+
+> @Resource和@Autowired 都是bean注入时使用的。
+
+> 不同点：@Autowired 按类型装配(这个注解属于spring)，可以结合@Qualifier注解一起使用。@Resource 按name装配(有J2EE提供)，可以使用name属性。
+
+4. @RequestParam <br>
+
+> @RequestParam 将指定的请求参数复制给方法中的形参，与@RequestMapping搭配使用。
+
+``` java
+// 该controller 用于注册。
+@RequestMapping(value="/register",method=RequestMethod.POST)
+	public String register(
+		   @RequestParam("userId") Integer userId,
+		   @RequestParam("password")  String password,
+		   @RequestParam("userName") String userName) {
+		User user = new User();
+		user.setUserId(userId);
+		user.setUserName(userName);
+		user.setPassword(password);
+
+		userList.add(user);	
+
+		// 返回到loginForm.jsp页面
+		return "loginForm";
+	}
+```
+
+5. @PathVariable <br>
+
+> @PathVariable 可以方便的获得请求的动态参数，只支持value属性，类型为String 表示绑定的名称，如果省略则默认绑定同名参数。
+
+6. @RequestHead <br>
+
+> @RequestHead用于将请求的头信息区数据映射到功能方法的参数上。
+
+7. @CookieValue <br>
+
+> @CookieValue 用于将请求的Cookie数据映射到功能处理的参数上。
+
+8. @SessionAttributes <br>
+
+> @SessionAttributes 注解有选择的指定Model中的哪些属性需要转存到HttpSession对象中。
+
+9. @ModelAttribute <br>
+
+> @ModelAttribute将请求参数绑定到Model对象。
 
