@@ -426,3 +426,9 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 	}
 ```
 
+
+## springMVC注解
+
+1. @Controller
+hdasjchasjc
+
