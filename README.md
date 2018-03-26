@@ -11,7 +11,7 @@
 [Ajax的执行顺序](#ajax的执行顺序)<br>
 [ajax动态实现下拉框从-数据库获取](#ajax动态实现下拉框-从数据库获取)<br>
 [在SSM的controller中获表单中文乱码](#在ssm的controller中获表单中文乱码)<br>
-[SpringMVC注解](#springMVC注解)<br>
+[SpringMVC注解](#springmvc注解)<br>
 
 
 ----------
