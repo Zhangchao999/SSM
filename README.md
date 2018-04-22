@@ -408,10 +408,16 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
 
 ```jsp
 
-所以的书籍：
+所有的书籍：
 <select id="bookTable" name="bookTable">
 	<option value="">请选择...</option>		
 </select>
+```
+
+```java
+
+java 方法把数据库获得的书籍信息由list转换为JSONArray，并返回。
+
 ```
 
 ```javascript
@@ -451,11 +457,6 @@ window.onload = function(){
 两种方法的比较：<br>
 	相同点：都可以实现下拉框数据从数据库中动态获得。<br>
 	不同点：使用onclick，根据点击的次数开获得数据，可能出现点击后还是显示两倍的数据。而使用window.onload，只是在页面加载完之后执行Ajax，不用判断点击的次数。<br>
-
-
-
-
-
 
 ## 在SSM的controller中获表单中文乱码
 
