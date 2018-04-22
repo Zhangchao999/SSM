@@ -10,6 +10,7 @@
 [Maven 添加JSON 显示错误](#maven-添加json-显示错误)<br>
 [Ajax的执行顺序](#ajax的执行顺序)<br>
 [ajax动态实现下拉框从-数据库获取](#ajax动态实现下拉框-从数据库获取)<br>
+[ajax动态实现下拉框-从数据库获取方法2](#ajax动态实现下拉框-从数据库获取方法2)<br>
 [在SSM的controller中获表单中文乱码](#在ssm的controller中获表单中文乱码)<br>
 [SpringMVC注解](#springmvc注解)<br>
 
@@ -402,6 +403,58 @@ public String showAllDep(HttpServletResponse response,HttpServletRequest request
  	}
  }
 ```
+
+## ajax动态实现下拉框-从数据库获取方法2
+
+```jsp
+
+所以的书籍：
+<select id="bookTable" name="bookTable">
+	<option value="">请选择...</option>		
+</select>
+```
+
+```javascript
+// 页面加载完后，执行showInfo()方法
+window.onload = function(){
+	showInfo();
+}
+ 
+ var xmlHttpRequest;
+ function showInfo(){
+ 	if (window.XMLHttpRequest) {
+		xmlHttpRequest = new XMLHttpRequest();
+	} else {
+		xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlHttpRequest.onreadystatechange = callBack;
+	url="/dropdownTest/getInfo";
+	xmlHttpRequest.open("POST", url, true);
+	xmlHttpRequest.send();
+ }
+ 
+ function callBack(){
+ 	if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
+ 		var books = xmlHttpRequest.responseText;
+ 		var book = eval("("+books+")");
+ 		var bt = document.getElementById("bookTable");
+ 			for(var i=0;i<book.length;i++){
+ 				var id = book[i].id;
+ 				var name = book[i].name;
+	 		 	bt.options.add(new Option(name,id));
+ 			}
+ 		
+ 	}
+ }
+```
+
+两种方法的比较：<br>
+	相同点：都可以实现下拉框数据从数据库中动态获得。<br>
+	不同点：使用onclick，根据点击的次数开获得数据，可能出现点击后还是显示两倍的数据。而使用window.onload，只是在页面加载完之后执行Ajax，不用判断点击的次数。<br>
+
+
+
+
 
 
 ## 在SSM的controller中获表单中文乱码
