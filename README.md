@@ -287,6 +287,9 @@ jdbc.password=
 ## 绝对路径
 ```java
 ${pageContext.request.contextPath}
+
+或者
+
 <%=request.getContextPath()%>
 ```
 
