@@ -291,6 +291,7 @@ ${pageContext.request.contextPath}
 或者
 
 <%=request.getContextPath()%>
+两者的效果一样。
 ```
 
 ## Maven 添加JSON 显示错误
