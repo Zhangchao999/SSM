@@ -287,6 +287,7 @@ jdbc.password=
 ## 绝对路径
 ```java
 ${pageContext.request.contextPath}
+<%=request.getContextPath()%>
 ```
 
 ## Maven 添加JSON 显示错误
